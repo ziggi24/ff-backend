@@ -1,0 +1,23 @@
+{
+  "name": "ff-backend",
+  "version": "1.0.0",
+  "description": "url shortening api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Zach Sharpe ziggi24@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^4.2.0",
+    "mongoose": "^5.11.8",
+    "morgan": "^1.10.0",
+    "nanoid": "^3.1.20"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
