@@ -2,8 +2,9 @@ const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const controllers = require('./controllers');
+require('dotenv').config();
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 
 const app = express();
 
@@ -19,5 +20,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log("Server up and listening on port: " + PORT);
+    console.log(`Server up and listening on port ${PORT}...`);
 })
