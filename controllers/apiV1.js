@@ -6,11 +6,21 @@ const db = require('../models');
 
 const router = express.Router();
 
-router.get('/', (req, res) =>{
-    return res.json({ // test route
-        message: "Hello api/ get request!"
-    })
-});
+
+router.get('/:slug', async (req, res) =>{ //Url lookup and fast-forward route
+    try{
+        const destUrl = await db.Url.findOne({ slug: req.params.slug}); //looking up destUrl by slug
+        if(destUrl){
+            destUrl.count++;
+            destUrl.save();
+            return res.redirect(destUrl.destUrl) //if slug returns db object, reroute to destUrl
+        }
+    } catch (err) { //catching errors, to be replaced with error handling middleware
+        console.log(err);
+        return res.json(err);
+    }
+    
+})
 
 router.post('/', async (req, res) =>{
     console.log(req.body);
