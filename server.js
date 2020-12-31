@@ -20,6 +20,6 @@ app.get('/', (req, res) => { // defualt route to be replaced with a static homep
 
 app.use('/', controllers.apiV1); // handles our api routes
 
-app.listen(PORT, () => {
+module.exports = app.listen(PORT, () => {
     console.log(`Server up and listening on port ${PORT}...`);
 })

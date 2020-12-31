@@ -30,7 +30,7 @@ router.get('/:slug/info', async (req, res) =>{ // to get more info about the URL
             return res.json(foundUrl); // return full db object
         } else {
             return res.json({// if slug cannot be found
-                message: "Slug not found"
+                error: "Slug not found"
             });
         }
     } catch (err) { // to be replaced with error catching middleware. 
@@ -49,7 +49,7 @@ router.post('/', async (req, res) =>{
                 const slugExists = await db.Url.findOne({slug: slug}) //check to see if it exists
                 if(slugExists){ //slug already exists
                     return res.json({
-                        message: "Error, Slug in Use"
+                        error: "Error, Slug in Use"
                     })
                 } else { // slug doesn't exist yet, create new db entry and send it back to user
                     const newUrl = {
@@ -81,7 +81,7 @@ router.post('/', async (req, res) =>{
             }
         } else {
             return res.json({
-                message: "invalid URL"
+                error: "invalid URL"
             })
         }
         
