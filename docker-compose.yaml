@@ -3,6 +3,8 @@ services:
   app:
     container_name: ff-backend
     restart: always
+    env_file: 
+      - ./.env
     build: .
     ports:
       - '8080:8080'
