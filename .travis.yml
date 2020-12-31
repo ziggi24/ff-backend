@@ -7,7 +7,3 @@ cache:
 sudo: required
 services:
   - docker
-before_script:
-  - npm install
-script:
-  - npm test
