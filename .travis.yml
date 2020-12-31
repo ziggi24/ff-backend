@@ -9,5 +9,5 @@ services:
   - docker
 before_script:
   - npm install
-+ script:
-+   - npm test
+script:
+  - npm test
