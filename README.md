@@ -15,5 +15,13 @@ A reworked URL Shortening API backend. This is 1/2 of a URL shortening full stac
 - [ ] Add edit route 
 - [ ] Add delete route
 - [ ] Add Tests to each route
+  - [x] / GET 
+  - [ ] / POST 
+    - [x] valid url no slug 
+    - [ ] valid url valid slug 
+    - [ ] valid url invalid slug 
+    - [ ] invalid url 
+  - [ ] /:slug GET
+  - [ ] /:slug/info GET
 - [ ] Write error handling middleware 
 
