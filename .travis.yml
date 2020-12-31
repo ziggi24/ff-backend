@@ -7,3 +7,5 @@ cache:
 sudo: required
 services:
   - docker
+script:
+  - docker-compose up --build --abort-on-container-exit
