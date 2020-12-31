@@ -4,3 +4,10 @@ node_js:
 cache:
   directories:
     - "node_modules"
+sudo: required
+services:
+  - docker
+before_script:
+  - npm install
++ script:
++   - npm test
