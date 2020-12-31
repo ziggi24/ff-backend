@@ -4,7 +4,7 @@ services:
     container_name: ff-backend
     restart: always
     environment: 
-      - MONGODB_URI="mongodb://mongo:27017/ff-backend"
+      - MONGODB_URI=mongodb://mongo:27017/ff-backend
       - PORT=8080
     build: .
     ports:
