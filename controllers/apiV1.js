@@ -21,6 +21,23 @@ router.get('/:slug', async (req, res) =>{ //Url lookup and fast-forward route
         return res.json(err);
     }
     
+});
+
+router.get('/:slug/info', async (req, res) =>{ // to get more info about the URL as well as see how many times it's been used.
+    try {
+        const foundUrl = await db.Url.findOne({slug: req.params.slug});//checking to see if the slug exists in db
+        if(foundUrl){
+            return res.json(foundUrl); // return full db object
+        } else {
+            return res.json({// if slug cannot be found
+                message: "Slug not found"
+            });
+        }
+    } catch (err) { // to be replaced with error catching middleware. 
+        console.log(err);
+        return res.json(err);
+    }
+
 })
 
 router.post('/', async (req, res) =>{
