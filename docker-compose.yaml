@@ -18,9 +18,7 @@ services:
       - '27017:27017'
   app-test: 
     image: ff-backend_app
-    command: dockerize
-        -wait tcp://app:8080 -wait tcp://mongo:27017 -timeout 10s
-        bash -c "npm run test"
+    command: npm run test
     depends_on:
       - app
       - mongo
