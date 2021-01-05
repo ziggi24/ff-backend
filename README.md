@@ -16,7 +16,10 @@ A reworked URL Shortening API backend (based on [this project](https://github.co
 ## TODO 
 - [ ] Add edit route 
 - [ ] Add delete route
-- [ ] Dockerize
+- [x] Dockerize
+  - [x] Locally
+  - [ ] Remote
+  - [ ] Travis
 - [ ] Add Tests to each route
   - [x] / GET 
   - [ ] / POST 
