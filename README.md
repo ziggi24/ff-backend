@@ -1,6 +1,6 @@
 # FF-Backend 
 
-[![Build Status](https://travis-ci.org/ziggi24/ff-backend.svg?branch=main)](https://travis-ci.org/ziggi24/ff-backend)
+[![Build Status](https://www.travis-ci.com/ziggi24/ff-backend.svg?branch=main)](https://www.travis-ci.com/ziggi24/ff-backend)
 
 A reworked URL Shortening API backend (based on [this project](https://github.com/ziggi24/ffrf.fr)). This is 1/2 of a URL shortening full stack app, the other half being a react front-end with auth. I wanted to rebuild this project becuase the first version I made in an afternoon and has some very glaring flaws. I wanted to put more of an emphasis on security and get more experience designing perfomant, scalable, and efficient code. 
 
