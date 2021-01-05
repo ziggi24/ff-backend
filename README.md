@@ -28,3 +28,6 @@ A reworked URL Shortening API backend (based on [this project](https://github.co
   - [ ] /:slug/info GET
 - [ ] Write error handling middleware 
 
+## Resources 
+- [medium graphql](https://medium.com/@utkarshprakash/setting-up-graphql-server-with-nodejs-express-and-mongodb-d72fba13216)
+- [travis & docker](https://github.com/heroku/logplex)
