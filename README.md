@@ -30,7 +30,7 @@ A reworked URL Shortening API backend (based on [this project](https://github.co
     - [x] valid url no slug 
     - [x] valid url valid slug 
     - [x] valid url invalid slug 
-    - [ ] invalid url 
+    - [x] invalid url 
   - [ ] /:slug GET
   - [ ] /:slug/info GET
 - [ ] Write error handling middleware 

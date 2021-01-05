@@ -58,7 +58,7 @@ describe("API ", () =>{
                 res.body.count.should.equal(0);
             done();
             })
-        })
+        });
         it('should reject an invalid slug, return error info', (done)=>{
             const data = {
                 url: 'https://google.com',
@@ -72,7 +72,21 @@ describe("API ", () =>{
                 res.body.should.be.a('object');
                 res.body.should.have.property('error');
             done();
-            })
-        }) 
+            });
+        });
+        it('should reject an invalid url, return error info', (done)=>{
+            const data = {
+                url: '$fgwsefvdafg@##55234'
+            };
+            chai.request(server)
+            .post('/')
+            .send(data)
+            .end((err, res) =>{
+                res.should.have.status(500);
+                res.body.should.be.a('object');
+                res.body.should.have.property('error');
+            done();
+            });
+        })
     })
 });
