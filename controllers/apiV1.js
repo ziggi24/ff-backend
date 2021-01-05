@@ -18,7 +18,7 @@ router.get('/:slug', async (req, res) =>{ //Url lookup and fast-forward route
         }
     } catch (err) { //catching errors, to be replaced with error handling middleware
         console.log(err);
-        return res.json(err);
+        return res.status(500).json(err);
     }
     
 });
@@ -29,7 +29,7 @@ router.get('/:slug/info', async (req, res) =>{ // to get more info about the URL
         if(foundUrl){
             return res.json(foundUrl); // return full db object
         } else {
-            return res.json({// if slug cannot be found
+            return res.status(500).json({// if slug cannot be found
                 error: "Slug not found"
             });
         }
@@ -48,7 +48,7 @@ router.post('/', async (req, res) =>{
             if(slug){ // if a slug has been specified
                 const slugExists = await db.Url.findOne({slug: slug}) //check to see if it exists
                 if(slugExists){ //slug already exists
-                    return res.json({
+                    return res.status(500).json({
                         error: "Error, Slug in Use"
                     })
                 } else { // slug doesn't exist yet, create new db entry and send it back to user
@@ -80,7 +80,7 @@ router.post('/', async (req, res) =>{
     
             }
         } else {
-            return res.json({
+            return res.status(500).json({
                 error: "invalid URL"
             })
         }

@@ -39,5 +39,40 @@ describe("API ", () =>{
                 done();
                 });
         });
+        it('should accept valid slug, add to db, and return json object', (done)=>{
+            const data = {
+                url: 'https://google.com',
+                slug: 'google'
+            }
+            chai.request(server)
+            .post('/')
+            .send(data)
+            .end((err, res) =>{
+                res.should.have.status(200);
+                res.body.should.be.a('object');
+                res.body.should.have.property('dateAdded');
+                res.body.should.have.property('destUrl');
+                res.body.should.have.property('slug');
+                res.body.should.have.property('shortUrl');
+                res.body.should.have.property('count');
+                res.body.count.should.equal(0);
+            done();
+            })
+        })
+        it('should reject an invalid slug, return error info', (done)=>{
+            const data = {
+                url: 'https://google.com',
+                slug: 'google'
+            }
+            chai.request(server)
+            .post('/')
+            .send(data)
+            .end((err, res) =>{
+                res.should.have.status(500);
+                res.body.should.be.a('object');
+                res.body.should.have.property('error');
+            done();
+            })
+        }) 
     })
 });

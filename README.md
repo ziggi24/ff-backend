@@ -28,8 +28,8 @@ A reworked URL Shortening API backend (based on [this project](https://github.co
   - [x] / GET 
   - [ ] / POST 
     - [x] valid url no slug 
-    - [ ] valid url valid slug 
-    - [ ] valid url invalid slug 
+    - [x] valid url valid slug 
+    - [x] valid url invalid slug 
     - [ ] invalid url 
   - [ ] /:slug GET
   - [ ] /:slug/info GET
