@@ -4,8 +4,7 @@ services:
     container_name: ff-backend
     restart: always
     environment: 
-      - MONGODB_URI=mongodb://mongo:27017/ff-backend
-      - PORT=8080
+      WAIT_HOSTS: mongo:27017
     build: .
     ports:
       - '8080:8080'
@@ -16,6 +15,7 @@ services:
   mongo:
     container_name: mongo
     image: mongo
+    restart: always
     ports:
       - '27017:27017'
   app-test: 

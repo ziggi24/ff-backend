@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const connectionString = process.env.MONGODB_URI;
+const connectionString = process.env.MONGODB_URI || "mongodb://mongo:27017/ff-backend"
 
 mongoose.connect(connectionString, {
   useNewUrlParser: true,

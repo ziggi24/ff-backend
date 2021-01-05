@@ -13,4 +13,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD /wait && ["npm", "start"]
+CMD /wait && npm start

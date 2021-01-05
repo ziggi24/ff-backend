@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const controllers = require('./controllers');
 require('dotenv').config();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
