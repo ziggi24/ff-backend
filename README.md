@@ -34,6 +34,6 @@ A reworked URL Shortening API backend (based on [this project](https://github.co
 - [ ] Write error handling middleware 
 
 ## Resources 
-- [medium graphql](https://medium.com/@utkarshprakash/setting-up-graphql-server-with-nodejs-express-and-mongodb-d72fba13216)
-- [travis & docker](https://github.com/heroku/logplex)
+- [integrating graphql](https://medium.com/@utkarshprakash/setting-up-graphql-server-with-nodejs-express-and-mongodb-d72fba13216)
+- [travis & docker config example](https://github.com/heroku/logplex)
 - [Docker docs for env vars](https://docs.docker.com/compose/environment-variables/)
