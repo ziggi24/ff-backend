@@ -19,7 +19,7 @@ A reworked URL Shortening API backend (based on [this project](https://github.co
 - [x] Dockerize
   - [x] Locally
   - [ ] Remote
-  - [ ] Travis
+  - [x] Travis
 - [ ] Add Tests to each route
   - [x] / GET 
   - [ ] / POST 
