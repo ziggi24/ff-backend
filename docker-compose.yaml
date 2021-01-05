@@ -19,6 +19,8 @@ services:
   app-test: 
     image: ff-backend_app
     command: npm run test
+    environment:
+      WAIT_HOSTS: mongo:27017
     depends_on:
       - app
       - mongo
