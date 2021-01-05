@@ -89,4 +89,25 @@ describe("API ", () =>{
             });
         })
     })
+    describe('GET /:slug', () =>{
+        it('should redirect if given valid slug', (done) =>{
+            chai.request(server)
+            .get('/google')
+            .end((err, res) =>{
+                res.should.redirect;
+            done();
+            })
+
+        });
+        it('should return an error if slug not found', (done) =>{
+            chai.request(server)
+            .get('/@@fdwsjiasdfh@@')
+            .end((err, res) =>{
+                res.should.have.status(500);
+                res.should.be.a('object');
+                res.should.have.property('error');
+            done();
+            })
+        })
+    })
 });

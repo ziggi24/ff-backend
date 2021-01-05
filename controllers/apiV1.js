@@ -15,6 +15,10 @@ router.get('/:slug', async (req, res) =>{ //Url lookup and fast-forward route
             destUrl.count++;
             destUrl.save();
             return res.redirect(destUrl.destUrl) //if slug returns db object, reroute to destUrl
+        } else {
+            return res.status(500).json({
+                error: "slug not found"
+            })
         }
     } catch (err) { //catching errors, to be replaced with error handling middleware
         console.log(err);
