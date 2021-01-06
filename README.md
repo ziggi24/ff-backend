@@ -4,6 +4,8 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/ziggi24/ff-backend/badge.svg)](https://snyk.io/test/github/ziggi24/ff-backend)
 [![Maintainability](https://api.codeclimate.com/v1/badges/82843919e9da8dfa9f57/maintainability)](https://codeclimate.com/github/ziggi24/ff-backend/maintainability)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![HitCount](http://hits.dwyl.com/ziggi24/ff=backend.svg)](http://hits.dwyl.com/ziggi24/ff=backend)
+
 
 
 A reworked URL Shortening API backend (based on [this project](https://github.com/ziggi24/ffrf.fr)). This is 1/2 of a URL shortening full stack app, the other half being a react front-end with auth. I wanted to rebuild this project becuase the first version I made in an afternoon and has some very glaring flaws. I wanted to put more of an emphasis on security and get more experience designing perfomant, scalable, and efficient code. 
