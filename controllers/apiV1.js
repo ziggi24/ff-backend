@@ -26,6 +26,23 @@ router.get('/:slug', async (req, res) =>{ //Url lookup and fast-forward route
     }
     
 });
+router.post('/:slug', async (req, res) =>{ //slug update route
+    try{
+        const foundUrl = await db.Url.findOne({ slug: req.params.slug}); //find slug in db
+        if(foundUrl){
+            foundUrl.slug = req.body.newSlug; // if slug exists, update it and save 
+            foundUrl.save();
+            return res.status(200).json(foundUrl);
+        } else {
+            return res.status(500).json({ //slug doesnt exist
+                error: "invalid slug"
+            })
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json(err);
+    }
+})
 
 router.get('/:slug/info', async (req, res) =>{ // to get more info about the URL as well as see how many times it's been used.
     try {

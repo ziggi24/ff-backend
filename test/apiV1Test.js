@@ -137,4 +137,27 @@ describe("API ", () =>{
             })
         })
     })
+    describe('POST /:slug', (done) =>{
+        it('should return the updated json object when given a valid slug', (done) =>{
+            const data = {
+                newSlug: "alphabet"
+            }
+            chai.request(server)
+            .post(`/google`)
+            .send(data)
+            .end((err, res) =>{
+                res.should.have.status(200);
+                res.should.be.a('object');
+                res.body.should.have.property('dateAdded');
+                res.body.should.have.property('destUrl');
+                res.body.destUrl.should.equal('https://google.com');
+                res.body.should.have.property('slug');
+                res.body.slug.should.equal('alphabet');
+                res.body.should.have.property('shortUrl');
+                res.body.should.have.property('count');
+                res.body.count.should.equal(1);
+            done();
+            })
+        })
+    })
 });

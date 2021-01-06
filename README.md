@@ -14,11 +14,12 @@ A reworked URL Shortening API backend (based on [this project](https://github.co
 | /           |     GET     |                                         main route returns json welcome message |
 | /           |    POST     |                    adds a URL to the DB either using a specified or random slug |
 | /:slug      |     GET     |                                       redirects to the URL associated with slug |
+| /:slug      |    POST     |                         updates the URL associated with slug with newSlug value |
 | /:slug/info |     GET     | returns full DB object with info about url, including count, date created, etc. |
 
 
 ## TODO 
-- [ ] Add edit route 
+- [x] Add edit route 
 - [ ] Add delete route
 - [x] Dockerize
   - [x] Locally
@@ -26,15 +27,18 @@ A reworked URL Shortening API backend (based on [this project](https://github.co
   - [x] Travis
 - [ ] Add Tests to each route
   - [x] / GET 
-  - [ ] / POST 
+  - [x] / POST 
     - [x] valid url no slug 
     - [x] valid url valid slug 
     - [x] valid url invalid slug 
     - [x] invalid url 
-  - [ ] /:slug GET
+  - [x] /:slug GET
     - [x] valid slug
     - [x] invalid slug
-  - [ ] /:slug/info GET
+  - [ ] /:slug POST
+    - [x] valid slug
+    - [ ] invalid slug
+  - [x] /:slug/info GET
     - [x] valid slug 
     - [x] invalid slug
 - [ ] Write error handling middleware 
