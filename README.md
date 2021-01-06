@@ -11,13 +11,14 @@
 A reworked URL Shortening API backend (based on [this project](https://github.com/ziggi24/ffrf.fr)). This is 1/2 of a URL shortening full stack app, the other half being a react front-end with auth. I wanted to rebuild this project becuase the first version I made in an afternoon and has some very glaring flaws. I wanted to put more of an emphasis on security and get more experience designing perfomant, scalable, and efficient code. 
 
 ## Curent Routes 
-| Path        | HTTP METHOD |                                                                            INFO |
-| :---------- | :---------: | :------------------------------------------------------------------------------ |
-| /           |     GET     |                                         main route returns json welcome message |
-| /           |    POST     |                    adds a URL to the DB either using a specified or random slug |
-| /:slug      |     GET     |                                       redirects to the URL associated with slug |
-| /:slug      |    POST     |                         updates the URL associated with slug with newSlug value |
-| /:slug/info |     GET     | returns full DB object with info about url, including count, date created, etc. |
+| Path          | HTTP METHOD |                                                                            INFO |
+| :------------ | :---------: | :------------------------------------------------------------------------------ |
+| /             |     GET     |                                         main route returns json welcome message |
+| /             |    POST     |                    adds a URL to the DB either using a specified or random slug |
+| /:slug        |     GET     |                                       redirects to the URL associated with slug |
+| /:slug        |    POST     |                         updates the URL associated with slug with newSlug value |
+| /:slug/info   |     GET     | returns full DB object with info about url, including count, date created, etc. |
+| /:slug/delete |    POST     |                          deletes db db object and returns status 200 to confirm |
 
 
 ## TODO 
@@ -43,6 +44,9 @@ A reworked URL Shortening API backend (based on [this project](https://github.co
   - [x] /:slug/info GET
     - [x] valid slug 
     - [x] invalid slug
+  - [ ] /:slug/delete
+    - [x] valid slug
+    - [ ] invalid slug
 - [ ] Write error handling middleware 
 
 ## Resources 

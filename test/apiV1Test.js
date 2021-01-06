@@ -160,4 +160,14 @@ describe("API ", () =>{
             })
         })
     })
+    describe('POST /:slug/delete', (done) =>{
+        it('should return status 200 to confirm url has been deleted', (done) =>{
+            chai.request(server)
+            .post('/alphabet/delete')
+            .end((err, res) =>{
+                res.should.have.status(200);
+            done();
+            })
+        })
+    })
 });
