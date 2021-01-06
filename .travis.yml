@@ -2,9 +2,6 @@ os: linux
 arch: arm64-graviton2
 group: edge
 language: node_js
-env:
-  global:
-    - CC_TEST_REPORTER_ID=dd81ddb20bd88db23b80a2b86291a840276a3033e4adbe88376f3bf3ce5ace79
 node_js: 
   - "stable"
 cache:
