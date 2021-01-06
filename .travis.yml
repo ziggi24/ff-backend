@@ -2,6 +2,9 @@ os: linux
 arch: arm64-graviton2
 group: edge
 language: node_js
+env:
+  global:
+    - CC_TEST_REPORTER_ID=dd81ddb20bd88db23b80a2b86291a840276a3033e4adbe88376f3bf3ce5ace79
 node_js: 
   - "stable"
 cache:
@@ -9,6 +12,12 @@ cache:
     - "node_modules"
 services:
   - docker
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
   - docker-compose build --no-cache
   - docker-compose run app-test
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
