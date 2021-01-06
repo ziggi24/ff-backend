@@ -35,6 +35,8 @@ A reworked URL Shortening API backend (based on [this project](https://github.co
     - [x] valid slug
     - [x] invalid slug
   - [ ] /:slug/info GET
+    - [x] valid slug 
+    - [x] invalid slug
 - [ ] Write error handling middleware 
 
 ## Resources 

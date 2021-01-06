@@ -110,4 +110,31 @@ describe("API ", () =>{
             })
         })
     })
+    describe('GET /:slug/info', () =>{
+        it('should return json object when passed valid slug, with correct count', (done) =>{
+            chai.request(server)
+            .get('/google/info')
+            .end((err, res) =>{
+                res.should.have.status(200);
+                res.should.be.a('object');
+                res.body.should.have.property('dateAdded');
+                res.body.should.have.property('destUrl');
+                res.body.should.have.property('slug');
+                res.body.should.have.property('shortUrl');
+                res.body.should.have.property('count');
+                res.body.count.should.equal(1);
+            done();
+            })
+        })
+        it('should return an error if slug not found', (done) =>{
+            chai.request(server)
+            .get('/@@fdwsjiasdfh@@/info')
+            .end((err, res) =>{
+                res.should.have.status(500);
+                res.should.be.a('object');
+                res.should.have.property('error');
+            done();
+            })
+        })
+    })
 });
