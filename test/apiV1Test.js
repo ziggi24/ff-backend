@@ -166,6 +166,12 @@ describe("API ", () =>{
             .post('/alphabet/delete')
             .end((err, res) =>{
                 res.should.have.status(200);
+                res.body.should.be.a('object');
+                res.body.should.have.property('dateAdded');
+                res.body.should.have.property('destUrl');
+                res.body.should.have.property('slug');
+                res.body.should.have.property('shortUrl');
+                res.body.should.have.property('count');
             done();
             })
         })
