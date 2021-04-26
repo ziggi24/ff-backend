@@ -22,7 +22,7 @@
     "mongoose": "^5.12.3",
     "morgan": "^1.10.0",
     "nanoid": "^3.1.20",
-    "validator": "^13.5.2"
+    "validator": "^13.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
